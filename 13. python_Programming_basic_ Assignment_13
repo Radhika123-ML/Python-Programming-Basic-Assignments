@@ -1,0 +1,632 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# python_Programming_basic_ Assignment_13"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Question 1:\n",
+    "Write a program that calculates and prints the value according to the given formula:\n",
+    "Q = Square root of [(2 * C * D)/H]\n",
+    "Following are the fixed values of C and H:\n",
+    "C is 50. H is 30.\n",
+    "D is the variable whose values should be input to your program in a comma-separated sequence.\n",
+    "Example\n",
+    "Let us assume the following comma separated input sequence is given to the program:\n",
+    "100,150,180\n",
+    "The output of the program should be:\n",
+    "18,22,24\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "input: 100,150,180\n",
+      "['18', '22', '24']\n"
+     ]
+    }
+   ],
+   "source": [
+    "from math import sqrt\n",
+    "def formula():\n",
+    "    out=[]\n",
+    "    D=eval(input(\"input: \"))\n",
+    "    C=50\n",
+    "    H=30\n",
+    "    for num in D:\n",
+    "        formula=str(int(sqrt((2*C*num)/H)))\n",
+    "        out.append(formula)\n",
+    "    print(out)\n",
+    "\n",
+    "formula()\n",
+    "        \n",
+    "    \n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Question 2:\n",
+    "Write a program which takes 2 digits, X,Y as input and generates a 2-dimensional array. The element value in the i-th row and j-th column of the array should be i*j.\n",
+    "Note: i=0,1.., X-1; j=0,1,¡Y-1.\n",
+    "Example\n",
+    "Suppose the following inputs are given to the program:\n",
+    "3,5\n",
+    "Then, the output of the program should be:\n",
+    "[[0, 0, 0, 0, 0], [0, 1, 2, 3, 4], [0, 2, 4, 6, 8]] \n",
+    "Then, the output should be:\n",
+    "again and hello makes perfect practice world"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "enter the no of rows: 3\n",
+      "enter the no of columns: 5\n",
+      "[[0, 0, 0, 0, 0], [0, 1, 2, 3, 4], [0, 2, 4, 6, 8]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "def array():\n",
+    "    row=int(input(\"enter the no of rows: \"))\n",
+    "    column=int(input(\"enter the no of columns: \"))\n",
+    "    arr=[]\n",
+    "    for i in range(row):\n",
+    "        arr.insert(row,[])\n",
+    "        for j in range(column):\n",
+    "            arr[i].append(i*j)\n",
+    "    print(arr)\n",
+    "\n",
+    "array()\n",
+    "        "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Question 3:\n",
+    "Write a program that accepts a comma separated sequence of words as input and prints the words in a comma-separated sequence after sorting them alphabetically.\n",
+    "Suppose the following input is supplied to the program:\n",
+    "without,hello,bag,world\n",
+    "Then, the output should be:\n",
+    "bag,hello,without,world\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "enter the words: q,s,a,d,g,h\n",
+      "a,d,g,h,q,s\n"
+     ]
+    }
+   ],
+   "source": [
+    "def sort_word():\n",
+    "    input_words=input(\"enter the words: \")\n",
+    "    sort_string=sorted(input_words.split(','))\n",
+    "    join_string=','.join(sort_string)\n",
+    "    print(join_string)\n",
+    "sort_word()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Question 4:\n",
+    "Write a program that accepts a sequence of whitespace separated words as input and prints the words after removing all duplicate words and sorting them alphanumerically.\n",
+    "Suppose the following input is supplied to the program:\n",
+    "hello world and practice makes perfect and hello world again"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "enter the words: apple is green red maroon yellow orange\n",
+      "apple green is maroon orange red yellow\n"
+     ]
+    }
+   ],
+   "source": [
+    "def sort_alphanumerically():\n",
+    "    input_words=input(\"enter the words: \")\n",
+    "    sort_string=sorted(input_words.split(' '))\n",
+    "    join_string=' '.join(sort_string)\n",
+    "    print(join_string)\n",
+    "sort_alphanumerically()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Question 5:\n",
+    "Write a program that accepts a sentence and calculate the number of letters and digits.\n",
+    "Suppose the following input is supplied to the program:\n",
+    "hello world! 123\n",
+    "Then, the output should be:\n",
+    "LETTERS 10\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "enter a sentence: there are 22 apples\n",
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\n",
+      "no of letters are 14 and no of digits are 2\n"
+     ]
+    }
+   ],
+   "source": [
+    " def calculate_numberofletters():\n",
+    "    string=input('enter a sentence: ')\n",
+    "    list_letter='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'\n",
+    "    list_num='0123456789'\n",
+    "    string_count=0\n",
+    "    num_count=0\n",
+    "    for i in string:\n",
+    "        if i in list_letter:\n",
+    "            string_count+=1\n",
+    "        if i in list_num:\n",
+    "            num_count+=1\n",
+    "    print(f'no of letters are {string_count} and no of digits are {num_count}')\n",
+    "calculate_numberofletters()\n",
+    "        "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Question 6:\n",
+    "A website requires the users to input username and password to register. Write a program to check the validity of password input by users.\n",
+    "Following are the criteria for checking the password:\n",
+    "1. At least 1 letter between [a-z]\n",
+    "2. At least 1 number between [0-9]\n",
+    "1. At least 1 letter between [A-Z]\n",
+    "3. At least 1 character from [$#@]\n",
+    "4. Minimum length of transaction password: 6\n",
+    "5. Maximum length of transaction password: 12\n",
+    "Your program should accept a sequence of comma separated passwords and will check them according to the above criteria. Passwords that match the criteria are to be printed, each separated by a comma.\n",
+    "Example\n",
+    "If the following passwords are given as input to the program:\n",
+    "ABd1234@1,a F1#,2w3E*,2We3345\n",
+    "Then, the output of the program should be:\n",
+    "ABd1234@1\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "enter password: ABd1234@1,a F1#,2w3E*,2We3345\n",
+      "['ABd1234@1', 'a F1#', '2w3E*', '2We3345']\n",
+      "error\n"
+     ]
+    }
+   ],
+   "source": [
+    "def password_checker():\n",
+    "    psswrd=input('enter password: ')\n",
+    "    letter='abcdefghijklmnopqrst'\n",
+    "    number='0123456789'\n",
+    "    cap_letter='ABCDEFGHIJKLMNOPQRST'\n",
+    "    spcl_char='$#@'\n",
+    "    letter_count=0\n",
+    "    number_count=0\n",
+    "    cap_letter_count=0\n",
+    "    spcl_char_count=0\n",
+    "    psswrd_list=psswrd.split(',')\n",
+    "    print(psswrd_list)\n",
+    "    for i in psswrd_list:\n",
+    "        len(i)>=6 and len(i)<=12\n",
+    "        if i in letter:\n",
+    "            letter_count+=1\n",
+    "        if i in number:\n",
+    "            number_count+=1\n",
+    "        if i in cap_letter:\n",
+    "            cap_letter_count+=1\n",
+    "        if i in spcl_char:\n",
+    "            spcl_char_count+=1\n",
+    "        if letter_count>=1 and number_count>=1 and cap_letter_count>=1 and spcl_char_count>=1:\n",
+    "            print(i)\n",
+    "    else:\n",
+    "        print(\"error\")\n",
+    "password_checker()\n",
+    "\n",
+    "                    \n",
+    "                \n",
+    "        \n",
+    "        "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
